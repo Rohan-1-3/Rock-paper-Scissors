@@ -1,0 +1,25 @@
+#container{
+    text-align: center;
+}
+
+input{
+    border-width: 3px;
+    margin: 30px;
+    cursor: pointer;
+}
+
+.options .score{
+    display: grid;
+}
+
+.options input{
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+.score input{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+}
