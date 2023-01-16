@@ -9,27 +9,38 @@
 </head>
 <body>
     <div id="container">
-        <div class="title">
+        <header>
             <h1>Rock Paper Scissors</h1>
-        </div>
-        <div class="options">
-            <div>
-                
-                <input type="button" id="option" value="Rock">
-                <input type="button" id="option" value="Paper">
-                <input type="button" id="option" value="Scissors" >
-            </div>
-        </div>
-        <div class="score">
-            <div>
-                <input type="button" id="player" value="You: 0">
-                <input type="button" id="computer" value="Computer: 0">
-            </div>
-        </div>
-        <p></p>
-        <div class="button">
             <button onclick="location.reload()">Play Again</button>
-        </div>
+        </header>
+
+        <main class="game">
+            <p></p>
+            <div class="options">
+                    <div class="rock">
+                        <img src="./images/rock.png" alt="rock" id="option">
+                    </div>
+                    <div class="paper">
+                        <img src="./images/paper.png" alt="paper" id="option">
+                    </div>
+                    <div class="scissors">
+                        <img src="./images/scissors.png" alt="scissors" id="option">
+                    </div>
+            </div>
+            <div class="score">
+                <div>
+                    <button id="player">You: 0</button>
+                    <button id="computer">Computer: 0</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <a href="">
+                <img src="./images/github.png" alt="">
+            </a>
+            <span><h1>Created By: rohan-1-3</h1></span>
+        </footer>
     </div>
 <script src="app.js"></script>
 </body>

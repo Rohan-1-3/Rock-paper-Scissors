@@ -6,6 +6,9 @@ const para = document.querySelector("p");
 const recordPlayer = document.getElementById("player");
 const recordComputer = document.getElementById("computer");
 const choices = ["rock","paper","scissors"];
+const header = document.querySelector("header");
+const score = document.querySelector(".score");
+const game = document.querySelector(".game");
 
 
 function getComputerChoice(){
@@ -21,13 +24,16 @@ function gameEnd(){
             para.textContent = "WINNER"
         };
         playerSelections.forEach((playerSelection)=> {
-            playerSelection.disabled = true
+            playerSelection.classList.add("hide");
         });
+        header.classList.add("header")
+        score.classList.add("game-end")
+        game.style.gridTemplateRows = "0.1fr 0.1fr 1fr" 
     }
 }
 
 function playRound(e){
-    const playerChoice = e.target.value.toLowerCase();
+    const playerChoice = e.target.alt.toLowerCase();
     const computerChoice = getComputerChoice();
 
     if(playerChoice !== choices[0] && playerChoice !== choices[1] && playerChoice !== choices[2]) return;
@@ -39,12 +45,12 @@ function playRound(e){
     || (computerChoice === "scissors" && playerChoice === "paper")){
         para.textContent = "Its a Loss";
         computerWin+=1;
-        recordComputer.value = `Computer: ${computerWin}`
+        recordComputer.textContent = `Computer: ${computerWin}`
     }
     else{
         para.textContent = "Its a Win";
         playerWin+=1;
-        recordPlayer.value = `You: ${playerWin}`
+        recordPlayer.textContent = `You: ${playerWin}`
     }
     gameEnd();
 }
